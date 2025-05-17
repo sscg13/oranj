@@ -33,6 +33,7 @@ namespace oranj::tunable
 	}
 
 	util::MultiArray<i32, 2, 256, 256> g_lmrTable{};
+	std::array<i32, 13> g_seeValues{};
 
 	auto updateQuietLmrTable() -> void
 	{
@@ -62,9 +63,30 @@ namespace oranj::tunable
 		}
 	}
 
+	auto updateSeeValueTable() -> void
+	{
+		// king and none
+		g_seeValues.fill(0);
+
+		const auto scores = std::array {
+			seeValuePawn(),
+			seeValueAlfil(),
+			seeValueFerz(),
+			seeValueKnight(),
+			seeValueRook(),
+		};
+
+		for (usize i = 0; i < scores.size(); ++i)
+		{
+			g_seeValues[i * 2 + 0] = scores[i];
+			g_seeValues[i * 2 + 1] = scores[i];
+		}
+	}
+
 	auto init() -> void
 	{
 		updateQuietLmrTable();
 		updateNoisyLmrTable();
+		updateSeeValueTable();
 	}
 }

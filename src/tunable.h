@@ -38,8 +38,12 @@ namespace oranj::tunable
 	// [noisy][depth][legal moves]
 	extern util::MultiArray<i32, 2, 256, 256> g_lmrTable;
 
+	// [coloured piece], +1 for none
+	extern std::array<i32, 13> g_seeValues;
+
 	auto updateQuietLmrTable() -> void;
 	auto updateNoisyLmrTable() -> void;
+	auto updateSeeValueTable() -> void;
 
 #define OJ_TUNABLE_ASSERTS(Default, Min, Max, Step) \
 	static_assert((Default) >= (Min)); \
@@ -122,6 +126,20 @@ namespace oranj::tunable
 
 	OJ_TUNABLE_PARAM_F64(timeScaleMin, 0.07, 0.001, 1.0, 0.1, 1000)
 
+	OJ_TUNABLE_PARAM_CALLBACK(seeValuePawn, 100, 50, 200, 7.5, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValueAlfil, 125, 50, 200, 7.5, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValueFerz, 160, 100, 350, 15, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValueKnight, 330, 250, 600, 25, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValueRook, 500, 400, 1000, 30, updateSeeValueTable)
+
+	OJ_TUNABLE_PARAM(scalingValuePawn, 100, 50, 200, 7.5)
+	OJ_TUNABLE_PARAM(scalingValueAlfil, 125, 50, 200, 7.5)
+	OJ_TUNABLE_PARAM(scalingValueFerz, 160, 100, 350, 15)
+	OJ_TUNABLE_PARAM(scalingValueKnight, 330, 250, 600, 25)
+	OJ_TUNABLE_PARAM(scalingValueRook, 500, 400, 1000, 30)
+
+	OJ_TUNABLE_PARAM(materialScalingBase, 12000, 5000, 20000, 750)
+
 	OJ_TUNABLE_PARAM(pawnCorrhistWeight, 120, 32, 384, 18)
 	OJ_TUNABLE_PARAM(stmNonPawnCorrhistWeight, 136, 32, 384, 18)
 	OJ_TUNABLE_PARAM(nstmNonPawnCorrhistWeight, 143, 32, 384, 18)
@@ -174,7 +192,8 @@ namespace oranj::tunable
 	OJ_TUNABLE_PARAM(lmrCutnodeReductionScale, 249, 32, 384, 12)
 	OJ_TUNABLE_PARAM(lmrHighComplexityReductionScale, 123, 32, 384, 12)
 
-	OJ_TUNABLE_PARAM(lmrHistoryDivisor, 10830, 4096, 16384, 650)
+	OJ_TUNABLE_PARAM(lmrQuietHistoryDivisor, 10830, 4096, 16384, 650)
+	OJ_TUNABLE_PARAM(lmrNoisyHistoryDivisor, 10830, 4096, 16384, 650)
 
 	OJ_TUNABLE_PARAM(lmrHighComplexityThreshold, 69, 30, 120, 5)
 

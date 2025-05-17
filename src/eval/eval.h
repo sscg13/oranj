@@ -25,6 +25,7 @@
 #include "nnue.h"
 #include "../position/position.h"
 #include "../core.h"
+#include "../tunable.h"
 #include "../correction.h"
 #include "../see.h"
 
@@ -55,17 +56,20 @@ namespace oranj::eval
 	template <bool Scale>
 	inline auto adjustStatic(const Position &pos, const Contempt &contempt, Score eval)
 	{
+		using namespace tunable;
+
 		if constexpr (Scale)
 		{
 			const auto bbs = pos.bbs();
 
 			const auto npMaterial
-				= see::values::Alfil  * bbs.alfils ().popcount()
-				+ see::values::Ferz   * bbs.ferzes ().popcount()
-				+ see::values::Knight * bbs.knights().popcount()
-				+ see::values::Rook   * bbs.rooks  ().popcount();
+				= scalingValuePawn()   * bbs.pawns  ().popcount()
+				+ scalingValueAlfil()  * bbs.alfils ().popcount()
+				+ scalingValueFerz()   * bbs.ferzes ().popcount()
+				+ scalingValueKnight() * bbs.knights().popcount()
+				+ scalingValueRook()   * bbs.rooks  ().popcount();
 
-			eval = eval * (13000 + npMaterial) / 16384;
+			eval = eval * (materialScalingBase() + npMaterial) / 16384;
 		}
 
 		eval += contempt[static_cast<i32>(pos.toMove())];
