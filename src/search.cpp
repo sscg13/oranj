@@ -847,7 +847,7 @@ namespace oranj::search
 
 					r += !PvNode * lmrNonPvReductionScale();
 					r -= ttpv * lmrTtpvReductionScale();
-					r -= history * 128 / lmrHistoryDivisor();
+					r -= history * 128 / (noisy ? lmrNoisyHistoryDivisor() : lmrQuietHistoryDivisor());
 					r -= improving * lmrImprovingReductionScale();
 					r -= pos.isCheck() * lmrCheckReductionScale();
 					r += cutnode * lmrCutnodeReductionScale();

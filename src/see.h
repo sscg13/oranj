@@ -23,6 +23,7 @@
 #include <array>
 
 #include "core.h"
+#include "tunable.h"
 #include "position/position.h"
 #include "attacks/attacks.h"
 
@@ -56,12 +57,12 @@ namespace oranj::see
 
 	constexpr auto value(Piece piece)
 	{
-		return Values[static_cast<i32>(piece)];
+		return tunable::g_seeValues[static_cast<i32>(piece)];;
 	}
 
 	constexpr auto value(PieceType piece)
 	{
-		return Values[static_cast<i32>(piece) * 2];
+		return tunable::g_seeValues[static_cast<i32>(piece) * 2];
 	}
 
 	inline auto gain(const PositionBoards &boards, Move move)
@@ -69,7 +70,7 @@ namespace oranj::see
 		auto score = value(boards.pieceAt(move.dst()));
 
 		if (move.isPromo())
-			score += values::Ferz - values::Pawn;
+			score += value(PieceType::Ferz) - value(PieceType::Pawn);
 
 		return score;
 	}
