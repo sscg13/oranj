@@ -126,51 +126,51 @@ namespace oranj::tunable
 
 	OJ_TUNABLE_PARAM_F64(timeScaleMin, 0.07, 0.001, 1.0, 0.1, 1000)
 
-	OJ_TUNABLE_PARAM_CALLBACK(seeValuePawn, 100, 50, 200, 7.5, updateSeeValueTable)
-	OJ_TUNABLE_PARAM_CALLBACK(seeValueAlfil, 125, 50, 200, 7.5, updateSeeValueTable)
-	OJ_TUNABLE_PARAM_CALLBACK(seeValueFerz, 160, 100, 350, 15, updateSeeValueTable)
-	OJ_TUNABLE_PARAM_CALLBACK(seeValueKnight, 330, 250, 600, 25, updateSeeValueTable)
-	OJ_TUNABLE_PARAM_CALLBACK(seeValueRook, 500, 400, 1000, 30, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValuePawn, 102, 50, 200, 7.5, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValueAlfil, 128, 50, 200, 7.5, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValueFerz, 159, 100, 350, 15, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValueKnight, 342, 250, 600, 25, updateSeeValueTable)
+	OJ_TUNABLE_PARAM_CALLBACK(seeValueRook, 512, 400, 1000, 30, updateSeeValueTable)
 
-	OJ_TUNABLE_PARAM(scalingValuePawn, 100, 50, 200, 7.5)
-	OJ_TUNABLE_PARAM(scalingValueAlfil, 125, 50, 200, 7.5)
-	OJ_TUNABLE_PARAM(scalingValueFerz, 160, 100, 350, 15)
-	OJ_TUNABLE_PARAM(scalingValueKnight, 330, 250, 600, 25)
-	OJ_TUNABLE_PARAM(scalingValueRook, 500, 400, 1000, 30)
+	OJ_TUNABLE_PARAM(scalingValuePawn, 98, 50, 200, 7.5)
+	OJ_TUNABLE_PARAM(scalingValueAlfil, 124, 50, 200, 7.5)
+	OJ_TUNABLE_PARAM(scalingValueFerz, 156, 100, 350, 15)
+	OJ_TUNABLE_PARAM(scalingValueKnight, 331, 250, 600, 25)
+	OJ_TUNABLE_PARAM(scalingValueRook, 519, 400, 1000, 30)
 
-	OJ_TUNABLE_PARAM(materialScalingBase, 12000, 5000, 20000, 750)
+	OJ_TUNABLE_PARAM(materialScalingBase, 13195, 5000, 20000, 750)
 
-	OJ_TUNABLE_PARAM(pawnCorrhistWeight, 120, 32, 384, 18)
-	OJ_TUNABLE_PARAM(stmNonPawnCorrhistWeight, 136, 32, 384, 18)
-	OJ_TUNABLE_PARAM(nstmNonPawnCorrhistWeight, 143, 32, 384, 18)
-	OJ_TUNABLE_PARAM(majorCorrhistWeight, 106, 32, 384, 18)
-	OJ_TUNABLE_PARAM(contCorrhistWeight, 128, 32, 384, 18)
+	OJ_TUNABLE_PARAM(pawnCorrhistWeight, 112, 32, 384, 18)
+	OJ_TUNABLE_PARAM(stmNonPawnCorrhistWeight, 114, 32, 384, 18)
+	OJ_TUNABLE_PARAM(nstmNonPawnCorrhistWeight, 131, 32, 384, 18)
+	OJ_TUNABLE_PARAM(majorCorrhistWeight, 88, 32, 384, 18)
+	OJ_TUNABLE_PARAM(contCorrhistWeight, 121, 32, 384, 18)
 
-	OJ_TUNABLE_PARAM(initialAspWindow, 10, 4, 50, 4)
+	OJ_TUNABLE_PARAM(initialAspWindow, 9, 4, 50, 4)
 	OJ_TUNABLE_PARAM(aspWideningFactor, 17, 1, 24, 1)
 
-	OJ_TUNABLE_PARAM(goodNoisySeeOffset, 3, -384, 384, 40)
+	OJ_TUNABLE_PARAM(goodNoisySeeOffset, 16, -384, 384, 40)
 
-	OJ_TUNABLE_PARAM(rfpMargin, 70, 25, 150, 5)
+	OJ_TUNABLE_PARAM(rfpMargin, 69, 25, 150, 5)
 
-	OJ_TUNABLE_PARAM(razoringMargin, 305, 100, 350, 40)
+	OJ_TUNABLE_PARAM(razoringMargin, 297, 100, 350, 40)
 
-	OJ_TUNABLE_PARAM(nmpEvalReductionScale, 208, 50, 300, 25)
+	OJ_TUNABLE_PARAM(nmpEvalReductionScale, 202, 50, 300, 25)
 
-	OJ_TUNABLE_PARAM(probcutMargin, 297, 150, 400, 13)
+	OJ_TUNABLE_PARAM(probcutMargin, 295, 150, 400, 13)
 	OJ_TUNABLE_PARAM(probcutSeeScale, 17, 6, 24, 1)
 
-	OJ_TUNABLE_PARAM(fpMargin, 230, 120, 350, 45)
-	OJ_TUNABLE_PARAM(fpScale, 64, 40, 80, 8)
+	OJ_TUNABLE_PARAM(fpMargin, 227, 120, 350, 45)
+	OJ_TUNABLE_PARAM(fpScale, 60, 40, 80, 8)
 
-	OJ_TUNABLE_PARAM(quietHistPruningMargin, -2342, -4000, -1000, 175)
-	OJ_TUNABLE_PARAM(quietHistPruningOffset, -1048, -4000, 4000, 400)
+	OJ_TUNABLE_PARAM(quietHistPruningMargin, -2377, -4000, -1000, 175)
+	OJ_TUNABLE_PARAM(quietHistPruningOffset, -1022, -4000, 4000, 400)
 
-	OJ_TUNABLE_PARAM(noisyHistPruningMargin, -1054, -4000, -1000, 175)
-	OJ_TUNABLE_PARAM(noisyHistPruningOffset, -941, -4000, 4000, 400)
+	OJ_TUNABLE_PARAM(noisyHistPruningMargin, -1103, -4000, -1000, 175)
+	OJ_TUNABLE_PARAM(noisyHistPruningOffset, -915, -4000, 4000, 400)
 
-	OJ_TUNABLE_PARAM(seePruningThresholdQuiet, -19, -80, -15, 12)
-	OJ_TUNABLE_PARAM(seePruningThresholdNoisy, -116, -120, -40, 20)
+	OJ_TUNABLE_PARAM(seePruningThresholdQuiet, -15, -80, -15, 12)
+	OJ_TUNABLE_PARAM(seePruningThresholdNoisy, -105, -120, -40, 20)
 
 	OJ_TUNABLE_PARAM(sBetaMargin, 14, 4, 64, 12)
 
@@ -179,39 +179,39 @@ namespace oranj::tunable
 	OJ_TUNABLE_PARAM(doubleExtMargin, 11, 0, 32, 5)
 	OJ_TUNABLE_PARAM(tripleExtMargin, 105, 10, 150, 7)
 
-	OJ_TUNABLE_PARAM_CALLBACK(quietLmrBase, 101, 50, 120, 15, updateQuietLmrTable)
+	OJ_TUNABLE_PARAM_CALLBACK(quietLmrBase, 118, 50, 120, 15, updateQuietLmrTable)
 	OJ_TUNABLE_PARAM_CALLBACK(quietLmrDivisor, 212, 100, 300, 10, updateQuietLmrTable)
 
-	OJ_TUNABLE_PARAM_CALLBACK(noisyLmrBase, -20, -50, 75, 10, updateNoisyLmrTable)
-	OJ_TUNABLE_PARAM_CALLBACK(noisyLmrDivisor, 256, 150, 350, 10, updateNoisyLmrTable)
+	OJ_TUNABLE_PARAM_CALLBACK(noisyLmrBase, -22, -50, 75, 10, updateNoisyLmrTable)
+	OJ_TUNABLE_PARAM_CALLBACK(noisyLmrDivisor, 254, 150, 350, 10, updateNoisyLmrTable)
 
-	OJ_TUNABLE_PARAM(lmrNonPvReductionScale, 134, 32, 384, 12)
-	OJ_TUNABLE_PARAM(lmrTtpvReductionScale, 128, 32, 384, 12)
-	OJ_TUNABLE_PARAM(lmrImprovingReductionScale, 144, 32, 384, 12)
-	OJ_TUNABLE_PARAM(lmrCheckReductionScale, 106, 32, 384, 12)
-	OJ_TUNABLE_PARAM(lmrCutnodeReductionScale, 249, 32, 384, 12)
-	OJ_TUNABLE_PARAM(lmrHighComplexityReductionScale, 123, 32, 384, 12)
+	OJ_TUNABLE_PARAM(lmrNonPvReductionScale, 138, 32, 384, 12)
+	OJ_TUNABLE_PARAM(lmrTtpvReductionScale, 129, 32, 384, 12)
+	OJ_TUNABLE_PARAM(lmrImprovingReductionScale, 143, 32, 384, 12)
+	OJ_TUNABLE_PARAM(lmrCheckReductionScale, 108, 32, 384, 12)
+	OJ_TUNABLE_PARAM(lmrCutnodeReductionScale, 251, 32, 384, 12)
+	OJ_TUNABLE_PARAM(lmrHighComplexityReductionScale, 124, 32, 384, 12)
 
-	OJ_TUNABLE_PARAM(lmrQuietHistoryDivisor, 10830, 4096, 16384, 650)
-	OJ_TUNABLE_PARAM(lmrNoisyHistoryDivisor, 10830, 4096, 16384, 650)
+	OJ_TUNABLE_PARAM(lmrQuietHistoryDivisor, 11206, 4096, 16384, 650)
+	OJ_TUNABLE_PARAM(lmrNoisyHistoryDivisor, 10716, 4096, 16384, 650)
 
-	OJ_TUNABLE_PARAM(lmrHighComplexityThreshold, 69, 30, 120, 5)
+	OJ_TUNABLE_PARAM(lmrHighComplexityThreshold, 68, 30, 120, 5)
 
-	OJ_TUNABLE_PARAM(lmrDeeperBase, 33, 20, 100, 6)
+	OJ_TUNABLE_PARAM(lmrDeeperBase, 31, 20, 100, 6)
 	OJ_TUNABLE_PARAM(lmrDeeperScale, 5, 3, 12, 1)
 
-	OJ_TUNABLE_PARAM(maxHistory, 15683, 8192, 32768, 256)
+	OJ_TUNABLE_PARAM(maxHistory, 15676, 8192, 32768, 256)
 
-	OJ_TUNABLE_PARAM(maxHistoryBonus, 2488, 1024, 4096, 256)
-	OJ_TUNABLE_PARAM(historyBonusDepthScale, 276, 128, 512, 32)
-	OJ_TUNABLE_PARAM(historyBonusOffset, 372, 128, 768, 64)
+	OJ_TUNABLE_PARAM(maxHistoryBonus, 2458, 1024, 4096, 256)
+	OJ_TUNABLE_PARAM(historyBonusDepthScale, 262, 128, 512, 32)
+	OJ_TUNABLE_PARAM(historyBonusOffset, 366, 128, 768, 64)
 
-	OJ_TUNABLE_PARAM(maxHistoryPenalty, 1126, 1024, 4096, 256)
-	OJ_TUNABLE_PARAM(historyPenaltyDepthScale, 360, 128, 512, 32)
-	OJ_TUNABLE_PARAM(historyPenaltyOffset, 164, 128, 768, 64)
+	OJ_TUNABLE_PARAM(maxHistoryPenalty, 1363, 1024, 4096, 256)
+	OJ_TUNABLE_PARAM(historyPenaltyDepthScale, 383, 128, 512, 32)
+	OJ_TUNABLE_PARAM(historyPenaltyOffset, 151, 128, 768, 64)
 
-	OJ_TUNABLE_PARAM(qsearchFpMargin, 148, 50, 400, 17)
-	OJ_TUNABLE_PARAM(qsearchSeeThreshold, -108, -200, 200, 20)
+	OJ_TUNABLE_PARAM(qsearchFpMargin, 144, 50, 400, 17)
+	OJ_TUNABLE_PARAM(qsearchSeeThreshold, -103, -200, 200, 20)
 
 #undef OJ_TUNABLE_PARAM
 #undef OJ_TUNABLE_PARAM_CALLBACK
