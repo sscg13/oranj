@@ -28,7 +28,7 @@
 #include "util/multi_array.h"
 
 #ifndef OJ_EXTERNAL_TUNE
-	#define OJ_EXTERNAL_TUNE 1
+	#define OJ_EXTERNAL_TUNE 0
 #endif
 
 namespace oranj::tunable
