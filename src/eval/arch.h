@@ -41,7 +41,18 @@ namespace oranj::eval
 
 	constexpr i32 Scale = 400;
 
-	using InputFeatureSet = nnue::features::SingleBucketMirrored<nnue::features::MirroredKingSide::Abcd>;
+	//using InputFeatureSet = nnue::features::SingleBucketMirrored<nnue::features::MirroredKingSide::Abcd>;
+	using InputFeatureSet = nnue::features::KingBucketsMirrored<
+		nnue::features::MirroredKingSide::Abcd,
+		0,  0,  0,  0,
+		0,  0,  0,  0,
+		0,  0,  0,  0,
+		1,  1,  1,  1,
+		1,  1,  1,  1,
+		1,  1,  1,  1,
+		1,  1,  1,  1,
+		1,  1,  1,  1
+	>;
 
 	using OutputBucketing = nnue::output::MaterialCount<8>;
 }
