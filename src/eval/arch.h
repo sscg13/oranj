@@ -35,7 +35,7 @@ namespace oranj::eval
 
 	constexpr bool PairwiseMul = false;
 
-	constexpr u32 L1Size = 384;
+	constexpr u32 L1Size = 512;
 
 	using L1Activation = nnue::activation::SquaredClippedReLU<i16, i32, L1Q>;
 
