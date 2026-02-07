@@ -59,9 +59,6 @@ else
 endif
 
 ifneq (, $(findstring clang,$(COMPILER_VERSION)))
-    ifneq ($(DETECTED_OS),Darwin)
-        LDFLAGS += -fuse-ld=lld
-    endif
     ifeq ($(DETECTED_OS),Windows)
         ifeq (,$(shell where llvm-profdata))
             $(warning llvm-profdata not found, disabling PGO)
