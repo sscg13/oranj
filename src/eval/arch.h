@@ -35,7 +35,7 @@ namespace oranj::eval
 
 	constexpr bool PairwiseMul = false;
 
-	constexpr u32 L1Size = 768;
+	constexpr u32 L1Size = 1024;
 
 	using L1Activation = nnue::activation::SquaredClippedReLU<i16, i32, L1Q>;
 
@@ -44,14 +44,14 @@ namespace oranj::eval
 	//using InputFeatureSet = nnue::features::SingleBucketMirrored<nnue::features::MirroredKingSide::Abcd>;
 	using InputFeatureSet = nnue::features::KingBucketsMirrored<
 		nnue::features::MirroredKingSide::Abcd,
-		0,  0,  0,  0,
-		1,  1,  1,  1,
-		2,  2,  2,  2,
-		2,  2,  2,  2,
-		3,  3,  3,  3,
-		3,  3,  3,  3,
-		3,  3,  3,  3,
-		3,  3,  3,  3
+		0,  0,  1,  1,
+		2,  2,  3,  3,
+		4,  4,  4,  4,
+		4,  4,  4,  4,
+		5,  5,  5,  5,
+		5,  5,  5,  5,
+		5,  5,  5,  5,
+		5,  5,  5,  5
 	>;
 
 	using OutputBucketing = nnue::output::MaterialCount<8>;
