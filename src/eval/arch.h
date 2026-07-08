@@ -39,7 +39,7 @@ namespace oranj::eval {
 
     constexpr u32 kFtScaleBits = 7;
 
-    constexpr u32 kL1Size = 128;
+    constexpr u32 kL1Size = 1024;
     constexpr u32 kL2Size = 1;
     constexpr u32 kL3Size = 0;
 
@@ -50,11 +50,23 @@ namespace oranj::eval {
 
     constexpr i32 kScale = 400;
 
-    using PsqFeatureSet = nnue::features::psq::SingleBucket;
+    using PsqFeatureSet = nnue::features::psq::KingBucketsMirrored<
+        nnue::features::psq::MirroredKingSide::kAbcd,
+        // clang-format off
+        0,  0,  1,  1,
+		2,  2,  3,  3,
+		4,  4,  4,  4,
+		4,  4,  4,  4,
+		5,  5,  5,  5,
+		5,  5,  5,  5,
+		5,  5,  5,  5,
+		5,  5,  5,  5
+        // clang-format on
+        >;
 
     using InputFeatureSet = PsqFeatureSet;
 
-    using OutputBucketing = nnue::output::Single;
+    using OutputBucketing = nnue::output::MaterialCount<8>;
 
     using LayeredArch = nnue::arch::SingleLayer<
         InputFeatureSet,
