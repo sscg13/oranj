@@ -48,7 +48,7 @@ namespace oranj::eval {
     constexpr bool kDualActivation = false;
     constexpr bool kSkipL2 = false;
 
-    constexpr i32 kScale = 400;
+    constexpr i32 kScale = 550;
 
     using PsqFeatureSet = nnue::features::psq::KingBucketsMirrored<
         nnue::features::psq::MirroredKingSide::kAbcd,
